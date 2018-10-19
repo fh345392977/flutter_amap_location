@@ -193,17 +193,17 @@ static NSDictionary* DesiredAccuracy = @{@"kCLLocationAccuracyBest":@(kCLLocatio
 
 
 +(NSDictionary*)regeocode2map:(AMapLocationReGeocode *)regeocode{
-    return @{@"formattedAddress":regeocode.formattedAddress,
-             @"country":regeocode.country,
-             @"province":regeocode.province,
-             @"city":regeocode.city,
-             @"district":regeocode.district,
-             @"citycode":regeocode.citycode,
-             @"adcode":regeocode.adcode,
-             @"street":regeocode.street,
-             @"number":regeocode.number,
-             @"POIName":regeocode.POIName,
-             @"AOIName":regeocode.AOIName,
+    return @{@"formattedAddress":regeocode.formattedAddress == nil?@"":regeocode.formattedAddress,
+             @"country":regeocode.country == nil?@"":regeocode.country,
+             @"province":regeocode.province == nil?@"":regeocode.province,
+             @"city":regeocode.city == nil?@"":regeocode.city,
+             @"district":regeocode.district == nil?@"":regeocode.district,
+             @"citycode":regeocode.citycode == nil?@"":regeocode.citycode,
+             @"adcode":regeocode.adcode == nil?@"":regeocode.adcode,
+             @"street":regeocode.street == nil?@"":regeocode.street,
+             @"number":regeocode.number == nil?@"":regeocode.number,
+             @"POIName":regeocode.POIName == nil?@"":regeocode.POIName,
+             @"AOIName":regeocode.AOIName == nil?@"":regeocode.AOIName,
              };
 }
 
